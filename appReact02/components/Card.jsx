@@ -1,4 +1,5 @@
 import './Card.css'
+import { useState } from 'react'
 
 // function Card(){
     
@@ -75,12 +76,20 @@ import './Card.css'
 //a mano nel parent all'interno del selettore child.
 //Quindi children è una parola chiave non una semplice prop.
 
-function Card({title, description, imgUrl, children, isSpotted}){
-        return (
-                 <div className="card">
+function Card({title, description, imgUrl, children}){
+    const [isSpotted, setSpotted] = useState(true)    
+    
+    return (
+        <div className={`{card ${isSpotted ? "card-background-green" : "card-background-red"}`}>
              <div className="card-image">
                  <img src={imgUrl} alt="" />
              </div>
+
+            
+
+             <button onClick={() => setSpotted((isSpotted) => !isSpotted)}>
+                Avvistato
+            </button>
 
              <div>
                  <h2>
@@ -92,8 +101,12 @@ function Card({title, description, imgUrl, children, isSpotted}){
                  <p>Commento {children}</p>
              </div>
 
-             <div><span>{isSpotted ? "Avvisato" : "Non Avvistato"}</span></div>
-         </div>
+             <div>
+                <span>
+                    {isSpotted ? "Avvisato" : "Non Avvistato"}
+                </span>
+            </div>
+        </div>
     )
 }
 

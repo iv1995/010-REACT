@@ -13,3 +13,11 @@
     padding: 20px;
     box-sizing: border-box;
 }
+
+.card-background-red{
+    background-color: red;
+}
+
+.card-background-green{
+    background-color: green;
+}
