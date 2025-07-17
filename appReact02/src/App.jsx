@@ -12,6 +12,9 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
+        <button onClick={()=>{console.log("Ciao dal pulsantino!")}}>
+          Pulsantino
+        </button>
       </div>
     </>
   )
