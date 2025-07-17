@@ -26,27 +26,74 @@ import './Card.css'
 
 //In questo modo definisco delle properties che verranno valorizzate nel component Parent.
 //Il dato esiste nel Parent.
-function Card(props){
-    const title = props.title;
-    const description = props.description;
-    const imgUrl = props.imgUrl;
+// function Card(props){
+//     const title = props.title;
+//     const description = props.description;
+//     const imgUrl = props.imgUrl;
 
-    return (
-            <div className="card">
-            <div className="card-image">
-                <img src={imgUrl} alt="" />
-            </div>
+//     return (
+//             <div className="card">
+//             <div className="card-image">
+//                 <img src={imgUrl} alt="" />
+//             </div>
 
-            <div>
-                <h2>
-                    {title}
-                </h2>
-                <p>
-                    {description}
-                </p>
-            </div>
-        </div>
+//             <div>
+//                 <h2>
+//                     {title}
+//                 </h2>
+//                 <p>
+//                     {description}
+//                 </p>
+//             </div>
+//         </div>
 
+//     )
+// }
+
+//In questa versione non passo una proprietà un parametro chiamato props ma passo direttamente un oggetto
+// function Card({title, description, imgUrl}){
+//     return (
+//         <div className="card">
+//              <div className="card-image">
+//                  <img src={imgUrl} alt="" />
+//              </div>
+
+//              <div>
+//                  <h2>
+//                      {title}
+//                  </h2>
+//                  <p>
+//                      {description}
+//                  </p>
+//              </div>
+//          </div>
+//     )
+// }
+
+
+//In questa versione utilizzerà una parola chiave che è children per poter raccogliere ciò che scrivo
+//a mano nel parent all'interno del selettore child.
+//Quindi children è una parola chiave non una semplice prop.
+
+function Card({title, description, imgUrl, children, isSpotted}){
+        return (
+                 <div className="card">
+             <div className="card-image">
+                 <img src={imgUrl} alt="" />
+             </div>
+
+             <div>
+                 <h2>
+                     {title}
+                 </h2>
+                 <p>
+                     {description}
+                 </p>
+                 <p>Commento {children}</p>
+             </div>
+
+             <div><span>{isSpotted ? "Avvisato" : "Non Avvistato"}</span></div>
+         </div>
     )
 }
 
