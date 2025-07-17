@@ -1,5 +1,5 @@
-import './Card.css'
 import { useState } from 'react'
+import './Card.css'
 
 // function Card(){
     
@@ -77,19 +77,13 @@ import { useState } from 'react'
 //Quindi children è una parola chiave non una semplice prop.
 
 function Card({title, description, imgUrl, children}){
-    const [isSpotted, setSpotted] = useState(true)    
+    const [spotted, setSpotted] = useState(false);
     
     return (
-        <div className={`{card ${isSpotted ? "card-background-green" : "card-background-red"}`}>
-             <div className="card-image">
-                 <img src={imgUrl} alt="" />
+        <div className={`card ${spotted ? 'card-background-green' : 'card-background-red'}`}>
+             <div className='card-image'>
+                 <img src={imgUrl}/>
              </div>
-
-            
-
-             <button onClick={() => setSpotted((isSpotted) => !isSpotted)}>
-                Avvistato
-            </button>
 
              <div>
                  <h2>
@@ -103,9 +97,13 @@ function Card({title, description, imgUrl, children}){
 
              <div>
                 <span>
-                    {isSpotted ? "Avvisato" : "Non Avvistato"}
+                    {spotted ? "Avvistato" : "Non Avvistato"}
                 </span>
             </div>
+
+            <button onClick={() => setSpotted((spotted) => !spotted)}>
+                Avvistato
+             </button>
         </div>
     )
 }
