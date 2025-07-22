@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Navbar from '../components/Navbar';
 import Card from '../components/Card';
+import ProvaState from '../components/ProvaState'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -35,6 +36,18 @@ function App() {
 
   function salutaInConsole(){
     console.log("Saluta in Console");
+  }
+
+  function handleChange(event){
+    console.log(event);
+    console.log(event.target.value)
+  }
+
+  function handleSubmit(event){
+    //L'uso di preventDefault() è necessario poiché siamo in una libreria fatta per costruire delle SPA(Single Page Application).
+    //Quindi la mia app non deve mai ricaricare la pagina
+    event.preventDefault();
+    console.log(event);
   }
 
   return (
@@ -126,6 +139,26 @@ function App() {
           <button onClick={salutaInConsole}>
             Saluta In Console
           </button>
+        </div>
+
+        <div className="card">
+            {/* Gestisco un campo input con il handleChange */}
+            <input type="text" name="" id="" onChange={handleChange}/>
+        </div>
+
+        <div className="card">
+          {/* Gestire un evento submit su un piccolo form*/}
+          <form onSubmit={handleSubmit}>
+            <button type='submit'>Submit</button>
+          </form>
+
+
+        </div>
+
+        <h3>Use State</h3>
+          
+        <div className="card-container">
+            <ProvaState></ProvaState>
         </div>
       </div>
 
