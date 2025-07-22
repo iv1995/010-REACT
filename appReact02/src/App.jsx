@@ -33,6 +33,10 @@ function App() {
     }
   ]
 
+  function salutaInConsole(){
+    console.log("Saluta in Console");
+  }
+
   return (
     <>
 
@@ -84,7 +88,7 @@ function App() {
         </Card>
       ))}
       </div>
-      
+
       <h2>Raccolta Avvistati</h2>
 
       <div className="card-container">
@@ -103,6 +107,28 @@ function App() {
         )))}
 
       </div>
+
+      <h1>Eventi</h1>
+      {/* Parto con la gestione di eventi attraverso funzioni anonime */}
+
+      <div className="card-container">
+        <div className="card">
+          <button onClick={() => {
+            setCount(count => count + 1)
+            alert("Hai appena cliccato sul pulsante") 
+          }}>
+            Contatore : {count}
+          </button>
+        </div>
+
+        <div className="card">
+          {/* Non posso usarla cone le parentesi salutaInConsole()*/}
+          <button onClick={salutaInConsole}>
+            Saluta In Console
+          </button>
+        </div>
+      </div>
+
     </>
   )
 }
