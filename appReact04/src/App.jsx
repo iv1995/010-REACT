@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Card from '../components/Card'
 import CardForm from '../components/CardForm'
 import FormProva from '../components/FormProva'
+import CardFormVero from '../components/CardFormVero'
 import './App.css'
 
 function App() {
@@ -48,6 +49,11 @@ function App() {
       setBirds([...birds, newBird]);
   }
 
+  //Questa è la funzione che raccoglierà il dato in output del component child chiamato FormProva
+  const stampaUser = (userToPrint) => {
+    console.log(userToPrint);
+  }
+
   return (
     <>
 
@@ -79,9 +85,13 @@ function App() {
       
       <div className="card-container">
         <h1>Form di Prova</h1>
-        <FormProva></FormProva>
+        <FormProva stampaUser={stampaUser}></FormProva>
       </div>
+        <hr />
 
+      <div className="card-containter">
+        <CardFormVero addBird={addBird}></CardFormVero>
+      </div>
     </>
   )
 }
