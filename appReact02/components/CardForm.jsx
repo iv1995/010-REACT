@@ -4,14 +4,14 @@
 
 function CardForm({addBird}){ //questo è un prop
 
-    function handleClick () {
+    function handleClick (formData) {
         const bird = {
-            id: 4,
-            nome: "Ara Ara",
-            description: "Bellissimo e magnifico",
-            imgURL: "https://images.unsplash.com/photo-1622926152955-252ec2809632?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            id: formData.get("id"),
+            nome: formData.get("nome"),
+            description: formData.get("description"),
+            url: formData.get("url"),
             isSpotted: true,
-            comment: "Obrigada!!"
+            comment: formData.get("comment")
         }
         
         addBird(bird);        
@@ -22,6 +22,7 @@ function CardForm({addBird}){ //questo è un prop
             <h3>Aggiungi</h3>
 
             <form action={handleClick}>
+                <input type="number" name="id"/>
                 <input type="text" name="name"/>
                 <input type="text" name="description"/>
                 <input type="text" name="url"/>
