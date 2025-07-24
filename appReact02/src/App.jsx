@@ -85,11 +85,22 @@ function App() {
     console.log(event.target.value)
   }
 
-  function handleSubmit(event){
+  function handleSubmit(formData){
     //L'uso di preventDefault() è necessario poiché siamo in una libreria fatta per costruire delle SPA(Single Page Application).
     //Quindi la mia app non deve mai ricaricare la pagina
-    event.preventDefault();
-    console.log(event);
+    //event.preventDefault();
+    
+    const bird = {
+            id: formData.get("id"),
+            nome: formData.get("nome"),
+            description: formData.get("description"),
+            imgURL: formData.get("url"),
+            isSpotted: true,
+            comment: formData.get("comment")
+        }
+        
+        addBird(bird);  
+    //console.log(event);
   }
 
   return (
@@ -190,7 +201,13 @@ function App() {
 
         <div className="card">
           {/* Gestire un evento submit su un piccolo form*/}
-          <form onSubmit={handleSubmit}>
+          <form action={handleSubmit}>
+            <input type="number" name="id" id="id"/>
+                <input type="text" name="name" id="name"/>
+                <input type="text" name="description" id="description"/>
+                <input type="text" name="url" id="url"/>
+                <input type="text" name="comment" id="comment"/>
+
             <button type='submit'>Submit</button>
           </form>
 

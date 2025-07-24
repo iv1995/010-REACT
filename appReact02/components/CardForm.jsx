@@ -9,12 +9,14 @@ function CardForm({addBird}){ //questo è un prop
             id: formData.get("id"),
             nome: formData.get("nome"),
             description: formData.get("description"),
-            url: formData.get("url"),
+            imgURL: formData.get("url"),
             isSpotted: true,
             comment: formData.get("comment")
         }
         
         addBird(bird);        
+
+        alert( formData.get("url"));
     }
 
     return(
@@ -22,13 +24,13 @@ function CardForm({addBird}){ //questo è un prop
             <h3>Aggiungi</h3>
 
             <form action={handleClick}>
-                <input type="number" name="id"/>
-                <input type="text" name="name"/>
-                <input type="text" name="description"/>
-                <input type="text" name="url"/>
-                <input type="text" name="comment"/>
+                <input type="number" name="id" id="id"/>
+                <input type="text" name="name" id="name"/>
+                <input type="text" name="description" id="description"/>
+                <input type="text" name="url" id="url"/>
+                <input type="text" name="comment" id="comment"/>
+
                 <button type="submit"> Aggiungi Volatile</button>
-                
             </form>
         </div>
     )
