@@ -4,7 +4,7 @@
 
 function CardForm({addBird}){ //questo è un prop
 
-    const handleClick = () =>{
+    function handleClick () {
         const bird = {
             id: 4,
             nome: "Ara Ara",
@@ -13,17 +13,22 @@ function CardForm({addBird}){ //questo è un prop
             isSpotted: true,
             comment: "Obrigada!!"
         }
-
+        
         addBird(bird);        
     }
 
     return(
         <div className="card">
             <h3>Aggiungi</h3>
-            <input type="text" />
-            <input type="text" />
-            <input type="text" />
-            <button onClick={handleClick} > Aggiungi Volatile</button>
+
+            <form action={handleClick}>
+                <input type="text" name="name"/>
+                <input type="text" name="description"/>
+                <input type="text" name="url"/>
+                <input type="text" name="comment"/>
+                <button type="submit"> Aggiungi Volatile</button>
+                
+            </form>
         </div>
     )
 }
