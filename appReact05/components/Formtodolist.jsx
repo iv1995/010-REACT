@@ -3,7 +3,7 @@ import E from "../components/E"
 
 function FormToDoList(){
 
-    const [initial, setInitial] = ([{position: 1, text:"Some text"}]);
+    const [initial, setInitial] = useState([{position: 1, text:"Some text"}]);
 
     const addNew = (newElement) => {
         setInitial(...initial, newElement);
