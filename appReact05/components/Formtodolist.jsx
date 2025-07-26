@@ -5,20 +5,20 @@ function FormToDoList(){
 
     const [initial, setInitial] = useState([{position: 1, text:"Some text"}]);
 
-    const addNew = (newElement) => {
-        setInitial(...initial, newElement);
+    const addNew = (newE) => {
+        setInitial([...initial, newE]);
     }
 
-    function handleSubmit(event){
-
-        const formData = new FormData(event.target);
+    const handleSubmit = (event) => {
 
         event.preventDefault();
+        
+        const newE = {
+            position:Math.floor(Math.random()*100), 
+            text: event.target[0].value
+        }
 
-        position = Math.floor(Math.random()*max);
-        text = formData.get("new");
-        newE = {position, text};
-
+        console.log(newE)
         addNew(newE);
     }
 
