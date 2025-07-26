@@ -122,7 +122,7 @@ function App() {
 
         <div className="card">
           {/* Gestire un evento submit su un piccolo form*/}
-          <form action={handleSubmit}>
+          <form onSubmit={handleSubmit}>
             <input type="number" name="id" id="id"/>
                 <input type="text" name="name" id="name"/>
                 <input type="text" name="description" id="description"/>

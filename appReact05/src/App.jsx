@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import Todolist from '../components/Todolist'
+import ToDoList from '../components/ToDoList'
 import './App.css'
 
 function App() {
@@ -30,7 +30,8 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
 
-      <Todolist></Todolist>
+      <ToDoList>
+      </ToDoList>
     </>
   )
 }

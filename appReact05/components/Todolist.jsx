@@ -1,7 +1,15 @@
 import {useState} from 'react'
+import FormToDoList from '../components/FormToDoList'
 
-function Todolist(){
+function ToDoList(){
     
+    return (
+        <>
+            <FormToDoList>
+                
+            </FormToDoList>
+        </>
+    )
 }
 
-export default Todolist
+export default ToDoList
