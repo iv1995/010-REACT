@@ -1,11 +1,19 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import E from '../components/E'
+import FormToDoList from '../components/FormToDoList'
 import ToDoList from '../components/ToDoList'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+
+  const [initial, setInitial] = useState([{position: 1, text:"Some text"}]);
+
+  const addNew = (newE) => {
+      setInitial([...initial, newE]);
+  }
 
   return (
     <>
@@ -30,8 +38,8 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
 
-      <ToDoList>
-      </ToDoList>
+      <FormToDoList addNew={addNew}></FormToDoList>
+      <ToDoList initial={initial}></ToDoList>
     </>
   )
 }

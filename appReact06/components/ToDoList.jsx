@@ -1,13 +1,15 @@
 import {useState} from 'react'
-import FormToDoList from '../components/FormToDoList'
+import E from '../components/E'
 
-function ToDoList(){
+function ToDoList({initial}){
     
     return (
         <>
-            <FormToDoList>
-                
-            </FormToDoList>
+            {
+                initial.map((elm) => (
+                        <E element={elm.text}>
+                        </E>))
+            }
         </>
     )
 }
