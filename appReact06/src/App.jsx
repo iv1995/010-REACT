@@ -9,7 +9,7 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 
-  const [initial, setInitial] = useState([{position: 1, text:"Some text"}]);
+  const [initial, setInitial] = useState([{position: 1, text:"Some text", date: new Date().toDateString()}]);
 
   const addNew = (newE) => {
       setInitial([...initial, newE]);

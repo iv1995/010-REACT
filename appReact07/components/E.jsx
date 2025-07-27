@@ -1,17 +1,14 @@
 import {useState} from 'react'
 
-function E({position, text, visible : isVisible}){
+function E({position, text, visible, setInitial, date}){
 
-    const [visible, setVisible] = useState(isVisible);
-
-    function changeVisibility(){
-        setVisible((visible) => !visible);
-    }
 
     return (
         <>
+
             <p>{text}</p>
-            <button className='btn btn-primary' onClick={changeVisibility}>Nascondi</button>
+            <p>{date.toDateString()}</p>
+            <button onClick={setInitial}>Nascondi</button>
         </>
     )
 }

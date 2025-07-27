@@ -5,12 +5,15 @@ function FormToDoList({addNew}){
 
     const handleSubmit = (event) => {
 
+        const d = new Date();
+
         event.preventDefault();
         
         const newE = {
             position:Math.floor(Math.random()*100), 
             text: event.target[0].value,
-            visible:true
+            visible:true,
+            date: new Date()
         }
 
         console.log(newE)

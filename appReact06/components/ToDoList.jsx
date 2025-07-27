@@ -7,7 +7,11 @@ function ToDoList({initial}){
         <>
             {
                 initial.map((elm) => (
-                        <E element={elm.text}>
+                        <E 
+                           position={elm.position}
+                           text={elm.text}
+                           date={elm.date}
+                        >
                         </E>))
             }
         </>

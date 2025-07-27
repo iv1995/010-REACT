@@ -9,14 +9,16 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 
-  const [initial, setInitial] = useState([{position: 1, text:"Some text", visible:true},
-                                          {position: 1, text:"Some hidden text", visible:false}
+  const [initial, setInitial] = useState([{position: 1, text:"Some text", visible:true, date: new Date()},
+                                          {position: 2, text:"Some hidden text", visible:false, date: new Date()}
   ]);
 
   const addNew = (newE) => {
       setInitial([...initial, newE]);
   }
 
+
+  
   return (
     <>
       <div>
@@ -41,7 +43,7 @@ function App() {
       </p>
 
       <FormToDoList addNew={addNew}></FormToDoList>
-      <ToDoList initial={initial}></ToDoList>
+      <ToDoList initial={initial} setInitial={setInitial}></ToDoList>
     </>
   )
 }

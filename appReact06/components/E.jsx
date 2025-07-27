@@ -1,7 +1,9 @@
-function E({element}){
+function E({position, text, date}){
     return (
         <>
-            <p>{element}</p>
+            <p>{position}</p>
+            <p>{text}</p>
+            <p>{date}</p>
         </>
     )
 }
