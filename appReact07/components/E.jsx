@@ -1,7 +1,17 @@
-function E({element}){
+import {useState} from 'react'
+
+function E({position, text, visible : isVisible}){
+
+    const [visible, setVisible] = useState(isVisible);
+
+    function changeVisibility(){
+        setVisible((visible) => !visible);
+    }
+
     return (
         <>
-            <p>{element}</p>
+            <p>{text}</p>
+            <button className='btn btn-primary' onClick={changeVisibility}>Nascondi</button>
         </>
     )
 }

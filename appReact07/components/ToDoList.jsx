@@ -2,12 +2,17 @@ import {useState} from 'react'
 import E from '../components/E'
 
 function ToDoList({initial}){
+
+    
     
     return (
         <>
             {
-                initial.map((elm) => (
-                        <E element={elm.text}>
+                initial.filter(elm => elm.visible).map(elm => (
+                        <E 
+                            position={elm.position}
+                            text={elm.text}
+                            visible={elm.visible}>
                         </E>))
             }
         </>

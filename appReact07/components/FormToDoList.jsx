@@ -9,7 +9,8 @@ function FormToDoList({addNew}){
         
         const newE = {
             position:Math.floor(Math.random()*100), 
-            text: event.target[0].value
+            text: event.target[0].value,
+            visible:true
         }
 
         console.log(newE)

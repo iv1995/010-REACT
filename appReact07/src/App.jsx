@@ -9,7 +9,9 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 
-  const [initial, setInitial] = useState([{position: 1, text:"Some text"}]);
+  const [initial, setInitial] = useState([{position: 1, text:"Some text", visible:true},
+                                          {position: 1, text:"Some hidden text", visible:false}
+  ]);
 
   const addNew = (newE) => {
       setInitial([...initial, newE]);
