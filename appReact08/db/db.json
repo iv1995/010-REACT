@@ -1,0 +1,16 @@
+{
+    "todo":[ 
+                {
+                    "position": 1, 
+                    "text":"Some text", 
+                    "visible":true, 
+                    "date": "1995-12-17T03:24:00"
+                },
+                {
+                    "position": 2, 
+                    "text":"Some text2", 
+                    "visible":true, 
+                    "date": "1995-12-17T03:24:00"
+                } 
+            ]
+}

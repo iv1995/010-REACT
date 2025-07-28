@@ -12,7 +12,7 @@ function E({initial, position, text, visible, setInitial, date}){
         <>
 
             <p>{text}</p>
-            <p>{date.toDateString()}</p>
+            <p>{date}</p>
             <button onClick={handleSubmit}>Nascondi</button>
         </>
     )

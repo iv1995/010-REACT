@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import E from '../components/E'
@@ -9,11 +9,12 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 
-  const [initial, setInitial] = useState([{position: 1, text:"Some text", visible:true, date: new Date()},
-                                          {position: 2, text:"Some hidden text", visible:false, date: new Date()}
-  ]);
+  const [initial, setInitial] = useState([]);
 
-  
+
+  useEffect(() => {
+    fetch("http://localhost:3000/todo").then(data => {return data.json()}).then(response =>  {console.log(response); setInitial([...response])});
+  },[]);
 
   const addNew = (newE) => {
       setInitial([...initial, newE]);
