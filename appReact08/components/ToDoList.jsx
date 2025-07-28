@@ -10,7 +10,7 @@ function ToDoList({initial, setInitial}){
                         
                          <E 
                              initial={initial}
-                             position={elm.position}
+                             id={elm.id}
                              text={elm.text}
                              visible={elm.visible}
                              date={elm.date}

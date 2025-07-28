@@ -13,7 +13,15 @@ function App() {
 
 
   useEffect(() => {
-    fetch("http://localhost:3000/todo").then(data => {return data.json()}).then(response =>  {console.log(response); setInitial([...response])});
+    let i = false;
+    setInitial(null);
+    fetch("http://localhost:3000/todo")
+    .then(data => {return data.json()})
+    .then(response =>  {console.log(response); setInitial([...response])});
+
+    return () => {
+      i = true;
+    };
   },[]);
 
   const addNew = (newE) => {

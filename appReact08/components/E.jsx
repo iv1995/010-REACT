@@ -1,9 +1,9 @@
 import {useState} from 'react'
 
-function E({initial, position, text, visible, setInitial, date}){
+function E({initial, id, text, visible, setInitial, date}){
 
     const handleSubmit = ()=>{
-        const remaining = initial.filter((element) => element.position !== position);
+        const remaining = initial.filter((element) => element.id !== id);
         setInitial([...remaining]);
     }
 
