@@ -30,11 +30,11 @@ function CardFormVero({addBird}){
 
         const bird={
             id: Math.ceil(Math.random()),
-            nome: formData.name,
-            description: formData.description,
-            imageURL: formData.image,
-            isSpotted: formData.isSpotted,
-            comment: formData.comment
+            nome: event.target[0].value,
+            description: event.target[1].value,
+            imageURL: event.target[2].value,
+            isSpotted: event.target[3].value,
+            comment: event.target[4].value
         }
 
         addBird(bird);
