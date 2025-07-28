@@ -8,7 +8,7 @@ function E({initial, id, text, visible, setInitial, date}){
     }
 
     useEffect(() => {
-        fetch("http://localhost:3000/todo" + id, {
+        fetch("http://localhost:3000/todo/" + id, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json"
