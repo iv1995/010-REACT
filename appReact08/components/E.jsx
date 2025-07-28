@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 
 function E({initial, id, text, visible, setInitial, date}){
 
@@ -7,6 +7,17 @@ function E({initial, id, text, visible, setInitial, date}){
         setInitial([...remaining]);
     }
 
+    useEffect(() => {
+        fetch("http://localhost:3000/todo" + id, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then(data =>{
+            console.log(data);
+        })
+    }, []);
 
     return (
         <>

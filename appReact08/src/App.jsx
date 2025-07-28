@@ -13,8 +13,11 @@ function App() {
 
 
   useEffect(() => {
+
     let i = false;
-    setInitial([{id:1, text:"someText", visible:true, date:"28-07-2025"}]);
+    
+      setInitial([{id:1, text:"someText", visible:true, date:"28-07-2025"}]);
+    
     fetch("http://localhost:3000/todo")
     .then(data => {return data.json()})
     .then(response =>  {console.log(response); setInitial([...response])});
