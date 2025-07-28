@@ -11,6 +11,23 @@ function App() {
 
   const [initial, setInitial] = useState([{id:"1", text:"someText", visible:true, date:"28-07-2025"}]);
   const [del, setDel] = useState(0);
+  const [newE, setNewE] = useState(null);
+
+  useEffect(() => {
+
+        let i = false;
+        
+        fetch("http://localhost:3000/todo", { method: "POST", headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(newE)
+        })
+        .then(data =>{
+            // console.log(data);
+            setNewE(null);
+        return () => {
+            i = true;
+        };
+    }), []});
+  
   
   useEffect(() => {
 
@@ -27,7 +44,7 @@ function App() {
             // console.log(data);
             console.log(del);
         })
-    }, [del]);
+    }, [del, setDel]);
 
 
   useEffect(() => {
@@ -45,9 +62,9 @@ function App() {
     };
   },[]);
 
-  const addNew = (newE) => {
-      setInitial([...initial, newE]);
-  }
+  // const addNew = (newE) => {
+  //     setInitial([...initial, newE]);
+  // }
 
 
   
@@ -74,7 +91,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
 
-      <FormToDoList addNew={addNew}></FormToDoList>
+      <FormToDoList setNewE={setNewE}></FormToDoList>
       <ToDoList initial={initial} setInitial={setInitial} setDel={setDel}></ToDoList>
     </>
   )

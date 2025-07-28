@@ -1,28 +1,29 @@
 import {useState, useEffect} from 'react'
 
-function FormToDoList(){
-
-    const [newE, setNewE] = useState(null);
+function FormToDoList({setNewE}){
 
     const handleSubmit = (event) => {
         event.preventDefault();
-            setNewE({id:event.target[0].value, text: event.target[1].value, visible:true, date:new Date().toDateString()});
+            setNewE({id:event.target[0].value, 
+                     text: event.target[1].value, 
+                     visible:true, 
+                     date:new Date().toDateString()});
     }
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        let i = false;
+    //     let i = false;
         
-        fetch("http://localhost:3000/todo", { method: "POST", headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(newE)
-        })
-        .then(data =>{
-            console.log(data);
+    //     fetch("http://localhost:3000/todo", { method: "POST", headers: { "Content-Type": "application/json" },
+    //         body: JSON.stringify(newE)
+    //     })
+    //     .then(data =>{
+    //         // console.log(data);
         
-        return () => {
-            i = true;
-        };
-    }), []});
+    //     return () => {
+    //         i = true;
+    //     };
+    // }), []});
 
 
     return (
