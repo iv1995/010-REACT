@@ -7,16 +7,34 @@ import ToDoList from '../components/ToDoList'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
-  const [initial, setInitial] = useState([{id:1, text:"someText", visible:true, date:"28-07-2025"}]);
+  const [initial, setInitial] = useState([{id:"1", text:"someText", visible:true, date:"28-07-2025"}]);
+  const [del, setDel] = useState(0);
+  
+  useEffect(() => {
+
+        // const obj = {"id":id, "text":text, "visible":visible, "date":date};
+
+        const URL = "http://localhost:3000/todo/" + del;
+        fetch(URL, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then(data =>{
+            // console.log(data);
+            console.log(del);
+        })
+    }, [del]);
 
 
   useEffect(() => {
 
     let i = false;
     
-      setInitial([{id:1, text:"someText", visible:true, date:"28-07-2025"}]);
+      setInitial([{id:"1", text:"someText", visible:true, date:"28-07-2025"}]);
     
     fetch("http://localhost:3000/todo")
     .then(data => {return data.json()})
@@ -57,7 +75,7 @@ function App() {
       </p>
 
       <FormToDoList addNew={addNew}></FormToDoList>
-      <ToDoList initial={initial} setInitial={setInitial}></ToDoList>
+      <ToDoList initial={initial} setInitial={setInitial} setDel={setDel}></ToDoList>
     </>
   )
 }

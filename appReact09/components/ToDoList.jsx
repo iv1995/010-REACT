@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import E from '../components/E'
 
-function ToDoList({initial, setInitial}){
+function ToDoList({initial, setInitial, setDel}){
     
     return (
         <>
@@ -14,7 +14,8 @@ function ToDoList({initial, setInitial}){
                              text={elm.text}
                              visible={elm.visible}
                              date={elm.date}
-                             setInitial={setInitial}>
+                             setInitial={setInitial}
+                             setDel={setDel}>
                          </E>))
             }
         </>

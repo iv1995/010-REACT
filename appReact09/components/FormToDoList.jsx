@@ -6,7 +6,7 @@ function FormToDoList(){
 
     const handleSubmit = (event) => {
         event.preventDefault();
-            setNewE({id:100, text: event.target[0].value, visible:true, date:new Date().toDateString()});
+            setNewE({id:event.target[0].value, text: event.target[1].value, visible:true, date:new Date().toDateString()});
     }
 
     useEffect(() => {
@@ -28,7 +28,8 @@ function FormToDoList(){
     return (
         <>
             <form onSubmit={handleSubmit}>
-                <input type="text" name="new"/>
+                <input type="text" name="id"/><br />
+                <input type="text" name="new"/><br />
                 <button type="submit">Aggiungi</button>
             </form>
         </>
