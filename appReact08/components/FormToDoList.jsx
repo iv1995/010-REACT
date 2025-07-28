@@ -9,7 +9,6 @@ function FormToDoList({addNew}){
     const handleSubmit = (event) => {
 
         event.preventDefault();
-        
         setNewE({id:100, text: event.target[0].value, visible:true, date:"28-07-2025"});
     }
 
