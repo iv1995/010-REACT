@@ -11,7 +11,7 @@ function App() {
 
   const [initial, setInitial] = useState([{id:"1", text:"someText", visible:true, date:"28-07-2025"}]);
   const [del, setDel] = useState(0);
-  const [newE, setNewE] = useState(null);
+  const [newE, setNewElement] = useState(null);
 
   useEffect(() => {
 
@@ -22,7 +22,7 @@ function App() {
         })
         .then(data =>{
             // console.log(data);
-            setNewE(null);
+            setNewElement(null);
         return () => {
             i = true;
         };
@@ -60,11 +60,7 @@ function App() {
     return () => {
       i = true;
     };
-  },[]);
-
-  // const addNew = (newE) => {
-  //     setInitial([...initial, newE]);
-  // }
+  },[del, setDel]);
 
 
   
@@ -91,7 +87,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
 
-      <FormToDoList setNewE={setNewE}></FormToDoList>
+      <FormToDoList setNewElement={setNewElement}></FormToDoList>
       <ToDoList initial={initial} setInitial={setInitial} setDel={setDel}></ToDoList>
     </>
   )
