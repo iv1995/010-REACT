@@ -1,5 +1,4 @@
 import {useState} from 'react'
-import E from "../components/E"
 
 function FormToDoList({addNew}){
 

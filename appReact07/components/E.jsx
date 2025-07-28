@@ -1,6 +1,11 @@
 import {useState} from 'react'
 
-function E({position, text, visible, setInitial, date}){
+function E({initial, position, text, visible, setInitial, date}){
+
+    const handleSubmit = ()=>{
+        const remaining = initial.filter((element) => element.position !== position);
+        setInitial([...remaining]);
+    }
 
 
     return (
@@ -8,7 +13,7 @@ function E({position, text, visible, setInitial, date}){
 
             <p>{text}</p>
             <p>{date.toDateString()}</p>
-            <button onClick={setInitial}>Nascondi</button>
+            <button onClick={handleSubmit}>Nascondi</button>
         </>
     )
 }
