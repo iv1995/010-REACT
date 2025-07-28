@@ -20,7 +20,7 @@ function App() {
     
     fetch("http://localhost:3000/todo")
     .then(data => {return data.json()})
-    .then(response =>  {console.log(response); setInitial([...response])});
+    .then(response =>  {setInitial([...response])});
 
     return () => {
       i = true;
