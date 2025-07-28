@@ -9,12 +9,12 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 
-  const [initial, setInitial] = useState([]);
+  const [initial, setInitial] = useState([{id:1, text:"someText", visible:true, date:"28-07-2025"}]);
 
 
   useEffect(() => {
     let i = false;
-    setInitial(null);
+    setInitial([{id:1, text:"someText", visible:true, date:"28-07-2025"}]);
     fetch("http://localhost:3000/todo")
     .then(data => {return data.json()})
     .then(response =>  {console.log(response); setInitial([...response])});
