@@ -1,5 +1,22 @@
-<h1>Tittolo app: {{title}} - Autore {{nomeAutore}}</h1>
+<!-- <h1>Tittoslo app: {{title}} - Autore {{nomeAutore}}</h1> -->
 
 <!--Per poter renderizzare un component chiamo il suo selettore e faccio l'import all'interno del component che lo renderizza, in questo caso APP-->
 
-<app-card></app-card>
+<div class="container">
+    <!-- <div class="row">
+        <div class="col-4">
+            <app-card [id]="mieiStudenti[0].id" 
+                      [nome]="mieiStudenti[0].nome"
+                      [cognome]="mieiStudenti[0].nome"></app-card>
+        </div>
+    </div> -->
+
+    @for (stud of mieiStudenti; track $index) {
+        <app-card
+            [id] = stud.id
+            [nome] = stud.nome
+            [cognome] = stud.cognome
+            [materie] = stud.materie
+        ></app-card>
+    }
+</div>

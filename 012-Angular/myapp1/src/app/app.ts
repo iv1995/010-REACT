@@ -11,5 +11,18 @@ import { Card } from './card/card';
 export class App {
   title:string = "Mia prima app";
   nomeAutore: string = "Dario Mennillo";
-
+  mieiStudenti = [
+    {
+      id: "s1",
+      nome: "Laura",
+      cognome: "Verdi",
+      materie: ["materia", "Java"]
+    },
+    {
+      id: "s2",
+      nome: "Luca",
+      cognome: "Rossi",
+      materie: ["materia"]
+    }
+  ] 
 }

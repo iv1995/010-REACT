@@ -1,3 +1,16 @@
-<p>card works!</p>
+<div class="card">
+    <div class="card-title">
+        <h3>{{nome}}{{cognome}}</h3>
+        <p>{{id}}</p>
+    </div>
 
-<h1>Card</h1>
+    <div class="card-body">
+        <!-- <img class="card-image" src="{{imgStud}}" alt="">
+        <p class="card-text">{{descStud}}</p> -->
+        <ul>
+            @for (materia of materie; track $index) {
+                <li>{{materia}}</li>
+            }
+        </ul>
+    </div>
+</div>
