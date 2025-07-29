@@ -21,7 +21,6 @@ function App() {
             body: JSON.stringify(newE)
         })
         .then(data =>{
-            // console.log(data);
             setNewElement(null);
         return () => {
             i = true;
@@ -30,7 +29,7 @@ function App() {
   
   
   useEffect(() => {
-        
+
         const URL = "http://localhost:3000/todo/" + del;
         fetch(URL, {
             method: "DELETE",
@@ -39,7 +38,6 @@ function App() {
             }
         })
         .then(data =>{
-            // console.log(data);
             console.log(del);
         })
     }, [del, setDel]);
