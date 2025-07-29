@@ -84,3 +84,21 @@ class Utente{
 
 let user = new Utente("Laura", "Verdi", 5);
 
+interface Umano{
+    nome:string,
+    cognome: string,
+
+    saluta: () => {}
+    //Oppure così
+    //saluta:() => string
+}
+
+abstract class Tizio implements Umano{
+    nome: string;
+    cognome: string;
+    saluta():string{
+        return this.nome;
+    };
+
+    abstract mioMetodo():void;
+}
