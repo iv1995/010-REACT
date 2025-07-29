@@ -30,9 +30,7 @@ function App() {
   
   
   useEffect(() => {
-
-        // const obj = {"id":id, "text":text, "visible":visible, "date":date};
-
+        
         const URL = "http://localhost:3000/todo/" + del;
         fetch(URL, {
             method: "DELETE",
