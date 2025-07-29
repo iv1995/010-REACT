@@ -8,8 +8,12 @@
         <!-- <img class="card-image" src="{{imgStud}}" alt="">
         <p class="card-text">{{descStud}}</p> -->
         <ul>
-            @for (materia of materie; track $index) {
-                <li>{{materia}}</li>
+            @if(materie.length == 0){
+                <p>Non ci sono materie</p> 
+            }@else{
+                @for (materia of materie; track $index) {
+                    <li>{{materia}}</li>
+                }
             }
         </ul>
     </div>
